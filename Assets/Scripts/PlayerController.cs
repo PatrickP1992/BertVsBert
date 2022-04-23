@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D playerRB;
     public float movementSpeed;
+    public GameObject projektilePrefab;
+    public Transform firePoint;
+    public bool player1;
+    public bool player2;
     public object live1;
     public object live2;
     public object live3;
@@ -15,17 +19,47 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
+        PlayerMovement();
+        ShootProjektile();
     }
 
     public void TakeDamage()
     {
-        
+
     }
 
     private void PlayerMovement()
     {
-        playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * movementSpeed;
+        if (player1)
+        {
+            playerRB.velocity = new Vector2(Input.GetAxisRaw("HorizontalPlayer1"), Input.GetAxisRaw("VerticalPlayer1")) * movementSpeed;
+        }
+        else if (player2)
+        {
+            playerRB.velocity = new Vector2(Input.GetAxisRaw("HorizontalPlayer2"), Input.GetAxisRaw("VerticalPlayer2")) * movementSpeed;
+        }
+
+
+    }
+
+    private void ShootProjektile()
+    {
+        if (player1)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("F pressed");
+                Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
+            }
+        }
+        else if (player2)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("Space pressed");
+                Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
+            }
+        }
+
     }
 }
