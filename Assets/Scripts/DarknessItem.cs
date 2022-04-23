@@ -11,6 +11,8 @@ public class DarknessItem : MonoBehaviour
     public BoxCollider2D col;
     public SpriteRenderer spriteRen;
     public Rigidbody2D rBody;
+
+    public float speedLimit;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,4 +59,6 @@ public class DarknessItem : MonoBehaviour
         spriteRen.enabled = true;
         col.enabled = true;
     }
+
+    
 }
