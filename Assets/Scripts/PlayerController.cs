@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
+
     }
 
     public void TakeDamage()
