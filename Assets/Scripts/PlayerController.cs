@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         live--;
         if (live == 2)
         {
-            live3.SetActive(false);
+            live3.SetActive(true);
         } else if (live == 1)
         {
                       live3.SetActive(true);
@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
                        live3.SetActive(true);
                        live2.SetActive(true);
                        live1.SetActive(true);
+                       lives = false;
         }
     }
 
