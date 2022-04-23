@@ -8,6 +8,7 @@ TagManager:
   - Border
   - Player1
   - Player2
+  - LifeCoin
   layers:
   - Default
   - TransparentFX

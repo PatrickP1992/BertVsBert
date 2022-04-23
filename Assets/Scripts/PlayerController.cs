@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     public GameObject live1;
     public GameObject live2;
     public GameObject live3;
+    public GameObject lifeCoin1;
+    public GameObject lifeCoin2;
+    public GameObject lifeCoin3;
+    public GameObject lifeCoin4;
+    public GameObject lifeCoin5;
+
 
     private int live = 3;
     private bool lives = true;
@@ -124,6 +130,16 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Gift");
             TakeDamage();
         }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("LifeCoin"))
+        {
+            Debug.Log("Heal");
+            addLife(other.gameObject);
+        }
     }
 
 
@@ -133,6 +149,16 @@ public class PlayerController : MonoBehaviour
         {
             lives = false;
         }
+    }
+
+    public void addLife(GameObject collidingObject)
+    {
+        if (live >= 0 && live < 3)
+        {
+            live++;
+        }
+        collidingObject.SetActive(false);
+
     }
 
 }

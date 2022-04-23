@@ -124,7 +124,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,7 +145,7 @@ TextureImporter:
         width: 112
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,7 +166,7 @@ TextureImporter:
         width: 176
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,7 +187,7 @@ TextureImporter:
         width: 272
         height: 152
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,27 +195,6 @@ TextureImporter:
       bones: []
       spriteID: 587eeccc6eb25734eb30c877d30c7a47
       internalID: 427974204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 1368
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04f6778fbc7668649815d9c69933248e
-      internalID: -247453225
       vertices: []
       indices: 
       edges: []
@@ -229,7 +208,7 @@ TextureImporter:
         width: 344
         height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,27 +216,6 @@ TextureImporter:
       bones: []
       spriteID: 561f7d9a5ae007446a7ebaa980d1f0d2
       internalID: 1766071650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_6
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 1376
-        width: 24
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 732b43c514fbe724b814ad559e1f96fe
-      internalID: 1891078684
       vertices: []
       indices: 
       edges: []
@@ -271,7 +229,7 @@ TextureImporter:
         width: 320
         height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,12 +245,12 @@ TextureImporter:
       name: blood - left 1_8
       rect:
         serializedVersion: 2
-        x: 560
+        x: 499
         y: 1184
-        width: 288
-        height: 176
+        width: 349
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -308,12 +266,12 @@ TextureImporter:
       name: blood - left 1_9
       rect:
         serializedVersion: 2
-        x: 1560
+        x: 1522
         y: 1192
-        width: 320
-        height: 176
+        width: 358
+        height: 201
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -326,78 +284,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood - left 1_10
-      rect:
-        serializedVersion: 2
-        x: 1752
-        y: 1176
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 979bbd51af189fb488ad73012a29344d
-      internalID: 730675005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 872
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f1daf61cfa08644f8eaf8980aeb810f
-      internalID: 1096601338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_12
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 800
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc57c310f3545db41aebe722d03fcd44
-      internalID: -146007740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blood - left 1_13
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 680
-        width: 296
-        height: 176
+        width: 344
+        height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,36 +305,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood - left 1_14
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 800
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b6af74a242346e4b8fa985e780417e3
-      internalID: 1964820994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blood - left 1_15
       rect:
         serializedVersion: 2
-        x: 560
+        x: 509
         y: 680
-        width: 296
-        height: 176
+        width: 347
+        height: 191
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -460,7 +334,7 @@ TextureImporter:
         width: 304
         height: 176
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -473,36 +347,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood - left 1_17
-      rect:
-        serializedVersion: 2
-        x: 1552
-        y: 808
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4745c981e365c254194e070a77a6068b
-      internalID: -509689776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blood - left 1_18
       rect:
         serializedVersion: 2
-        x: 1576
-        y: 680
-        width: 304
-        height: 176
+        x: 1520
+        y: 674
+        width: 366
+        height: 197
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -510,48 +363,6 @@ TextureImporter:
       bones: []
       spriteID: a219beab0cb6c7944b4d1302f0e7bea5
       internalID: 1383686265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_19
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 664
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 717ec656431b6894aa40045b1fb88fcf
-      internalID: 913726100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_20
-      rect:
-        serializedVersion: 2
-        x: 728
-        y: 664
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f413f19b7aa46c441a78ce40ac35fc06
-      internalID: -775556165
       vertices: []
       indices: 
       edges: []
@@ -565,7 +376,7 @@ TextureImporter:
         width: 312
         height: 176
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -581,12 +392,12 @@ TextureImporter:
       name: blood - left 1_22
       rect:
         serializedVersion: 2
-        x: 568
+        x: 546
         y: 168
-        width: 296
-        height: 176
+        width: 320
+        height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -599,36 +410,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood - left 1_23
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 304
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d2c0cdf3f00d67489c5b118179e542b
-      internalID: 793618696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blood - left 1_24
       rect:
         serializedVersion: 2
-        x: 1096
+        x: 1028
         y: 160
-        width: 280
-        height: 192
+        width: 348
+        height: 203
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -644,12 +434,12 @@ TextureImporter:
       name: blood - left 1_25
       rect:
         serializedVersion: 2
-        x: 1592
+        x: 1530
         y: 160
-        width: 296
-        height: 192
+        width: 358
+        height: 203
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -657,90 +447,6 @@ TextureImporter:
       bones: []
       spriteID: 0f02ef5c5a3d53b4289a8f5b6430fef0
       internalID: 1264030129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_26
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 272
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7391bc144d0340d428a6298c2dbb9ec2
-      internalID: -1059102833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_27
-      rect:
-        serializedVersion: 2
-        x: 1048
-        y: 280
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 628523cee607b5a4ead295dc9079b89c
-      internalID: 1188194143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_28
-      rect:
-        serializedVersion: 2
-        x: 1552
-        y: 280
-        width: 16
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a5f3aee8229d2041addadd7eb3125e5
-      internalID: 1810117617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood - left 1_29
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 256
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88298b872a3a18845906212e502e54a4
-      internalID: 706332142
       vertices: []
       indices: 
       edges: []
