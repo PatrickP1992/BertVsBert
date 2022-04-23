@@ -154,6 +154,138 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player_Map_Kb"",
+            ""id"": ""a88d4f66-2e66-4b2d-af87-afe62bb95c5f"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""beadaf40-e8a9-41a1-a1f9-3b369b308a3e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef252cfd-6d32-4c09-aea4-54d1ea5dd096"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item1"",
+                    ""type"": ""Button"",
+                    ""id"": ""21b8df44-da0c-4197-b02f-486e8b9aec4a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item2"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7969cf6-ae1f-4302-bf89-fe804a41b43d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""29c0bb30-bd4c-4af5-9836-b2e139b644be"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""9663de89-a95a-420f-afa2-7aa940d405c3"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""98697d30-a5da-4e2e-b168-38b32b4a8400"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""32e18cfa-cc30-4107-93ad-b8ed52626e0e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8fd31a02-0bcd-4611-ae98-9e3d7891be9a"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59a61b85-bfec-4807-8404-dea30aed8b88"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd1e5081-0991-4514-8e7a-ce3aa7f51398"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb7ad3d1-48dc-44ce-b78f-f214248c9f5a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -164,6 +296,12 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Player_Map_Shoot = m_Player_Map.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Map_Item1 = m_Player_Map.FindAction("Item1", throwIfNotFound: true);
         m_Player_Map_Item2 = m_Player_Map.FindAction("Item2", throwIfNotFound: true);
+        // Player_Map_Kb
+        m_Player_Map_Kb = asset.FindActionMap("Player_Map_Kb", throwIfNotFound: true);
+        m_Player_Map_Kb_Movement = m_Player_Map_Kb.FindAction("Movement", throwIfNotFound: true);
+        m_Player_Map_Kb_Shoot = m_Player_Map_Kb.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Map_Kb_Item1 = m_Player_Map_Kb.FindAction("Item1", throwIfNotFound: true);
+        m_Player_Map_Kb_Item2 = m_Player_Map_Kb.FindAction("Item2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,7 +414,71 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         }
     }
     public Player_MapActions @Player_Map => new Player_MapActions(this);
+
+    // Player_Map_Kb
+    private readonly InputActionMap m_Player_Map_Kb;
+    private IPlayer_Map_KbActions m_Player_Map_KbActionsCallbackInterface;
+    private readonly InputAction m_Player_Map_Kb_Movement;
+    private readonly InputAction m_Player_Map_Kb_Shoot;
+    private readonly InputAction m_Player_Map_Kb_Item1;
+    private readonly InputAction m_Player_Map_Kb_Item2;
+    public struct Player_Map_KbActions
+    {
+        private @PlayerActions m_Wrapper;
+        public Player_Map_KbActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Player_Map_Kb_Movement;
+        public InputAction @Shoot => m_Wrapper.m_Player_Map_Kb_Shoot;
+        public InputAction @Item1 => m_Wrapper.m_Player_Map_Kb_Item1;
+        public InputAction @Item2 => m_Wrapper.m_Player_Map_Kb_Item2;
+        public InputActionMap Get() { return m_Wrapper.m_Player_Map_Kb; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player_Map_KbActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer_Map_KbActions instance)
+        {
+            if (m_Wrapper.m_Player_Map_KbActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnMovement;
+                @Shoot.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnShoot;
+                @Item1.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem1;
+                @Item1.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem1;
+                @Item1.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem1;
+                @Item2.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
+                @Item2.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
+                @Item2.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
+            }
+            m_Wrapper.m_Player_Map_KbActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
+                @Item1.started += instance.OnItem1;
+                @Item1.performed += instance.OnItem1;
+                @Item1.canceled += instance.OnItem1;
+                @Item2.started += instance.OnItem2;
+                @Item2.performed += instance.OnItem2;
+                @Item2.canceled += instance.OnItem2;
+            }
+        }
+    }
+    public Player_Map_KbActions @Player_Map_Kb => new Player_Map_KbActions(this);
     public interface IPlayer_MapActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+        void OnItem1(InputAction.CallbackContext context);
+        void OnItem2(InputAction.CallbackContext context);
+    }
+    public interface IPlayer_Map_KbActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerAction : MonoBehaviour
+public class KeyboardAction : MonoBehaviour
 {
     [SerializeField] 
     private float _speed;
@@ -22,17 +22,17 @@ public class ControllerAction : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerActions.Player_Map.Enable();
+        _playerActions.Player_Map_Kb.Enable();
     }
 
     private void OnDisable()
     {
-        _playerActions.Player_Map.Disable();
+        _playerActions.Player_Map_Kb.Disable();
     }
 
     private void FixedUpdate()
     {
-        _moveInput = _playerActions.Player_Map.Movement.ReadValue<Vector2>();
+        _moveInput = _playerActions.Player_Map_Kb.Movement.ReadValue<Vector2>();
         _rbody.velocity = _moveInput * _speed;
     }
 
