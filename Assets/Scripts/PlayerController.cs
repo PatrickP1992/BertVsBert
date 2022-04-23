@@ -12,19 +12,22 @@ public class PlayerController : MonoBehaviour
     public bool player1;
     public bool player2;
     public Transform startPosition;
-    public object live1;
-    public object live2;
-    public object live3;
+    public GameObject live1;
+    public GameObject live2;
+    public GameObject live3;
+
     private int live = 3;
     private bool lives = true;
     private PlayerActions _playerActions;
     private Vector2 _moveInput;
+
 
     // Update is called once per frame
     void Update()
     {
         PlayerMovement();
         ShootProjektile();
+        updateWinningCondition();
     }
     
     private void Awake()
@@ -46,7 +49,20 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage()
     {
-        
+        live--;
+        if (live == 2)
+        {
+            live3.SetActive(false);
+        } else if (live == 1)
+        {
+                      live3.SetActive(true);
+                       live2.SetActive(true);
+        } else if (live <= 0)
+        {
+                       live3.SetActive(true);
+                       live2.SetActive(true);
+                       live1.SetActive(true);
+        }
     }
 
     public void ResetPosition()
@@ -98,6 +114,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("Treffer");
+            TakeDamage();
         }
         if (other.gameObject.CompareTag("Border"))
         {
@@ -105,5 +122,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
+    private void updateWinningCondition()
+    {
+        if (live <= 1 && live >= 3)
+        {
+            lives = false;
+        } 
+    }
+
 }
