@@ -29,12 +29,12 @@ public class PlayerController : MonoBehaviour
         ShootProjektile();
         updateWinningCondition();
     }
-    
+
     private void Awake()
     {
         _playerActions = new PlayerActions();
     }
-    
+
     private void OnEnable()
     {
         _playerActions.Player_Map_Kb.Enable();
@@ -53,16 +53,18 @@ public class PlayerController : MonoBehaviour
         if (live == 2)
         {
             live3.SetActive(true);
-        } else if (live == 1)
+
+        }
+        else if (live == 1)
         {
-                      live3.SetActive(true);
-                       live2.SetActive(true);
-        } else if (live <= 0)
+            live3.SetActive(true);
+            live2.SetActive(true);
+        }
+        else if (live <= 0)
         {
-                       live3.SetActive(true);
-                       live2.SetActive(true);
-                       live1.SetActive(true);
-                       lives = false;
+            live3.SetActive(true);
+            live2.SetActive(true);
+            live1.SetActive(true);
         }
     }
 
@@ -105,7 +107,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Space pressed");
                 Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
-                
+
             }
         }
     }
@@ -120,6 +122,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Border"))
         {
             Debug.Log("Gift");
+            TakeDamage();
         }
     }
 
@@ -129,7 +132,7 @@ public class PlayerController : MonoBehaviour
         if (live <= 1 && live >= 3)
         {
             lives = false;
-        } 
+        }
     }
 
 }

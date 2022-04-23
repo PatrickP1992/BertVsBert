@@ -51,6 +51,9 @@ TagManager:
   - name: Player
     uniqueID: 1854925793
     locked: 0
+  - name: BlackScreenOverlay
+    uniqueID: 3918925111
+    locked: 0
   - name: GameOverlay
     uniqueID: 879581737
     locked: 0
