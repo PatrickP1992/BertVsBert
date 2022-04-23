@@ -12,6 +12,8 @@ public class DarknessItem : MonoBehaviour
     public SpriteRenderer spriteRen;
     public Rigidbody2D rBody;
 
+    public AudioSource powerUpSound;
+
     public float speedLimit;
     // Start is called before the first frame update
     void Start()
@@ -25,11 +27,18 @@ public class DarknessItem : MonoBehaviour
         
     }
 
+    public void PowerUpAudio()
+    {
+        powerUpSound.Play();
+    }
+    
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("Player1"))
         {
             blackScreenLeft.SetActive(true);
+            PowerUpAudio();
             StartCoroutine(waitTime(3));
             spriteRen.enabled = false;
             col.enabled = false;
@@ -38,6 +47,7 @@ public class DarknessItem : MonoBehaviour
         else if (other.tag.Equals("Player2"))
         {
             blackScreenRight.SetActive(true);
+            PowerUpAudio();
             StartCoroutine(waitTime(3));
             spriteRen.enabled = false;
             col.enabled = false;

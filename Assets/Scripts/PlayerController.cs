@@ -21,6 +21,12 @@ public class PlayerController : MonoBehaviour
     public GameObject lifeCoin4;
     public GameObject lifeCoin5;
 
+    public AudioSource walkingSound;
+    public AudioSource hitSound;
+    public AudioSource powerUpSound;
+    public AudioSource shootSound;
+    public AudioSource dyingSound;
+
 
     private int live = 3;
     private bool lives = true;
@@ -51,6 +57,8 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         _playerActions.Player_Map_Kb.Disable();
+        _playerActions.Player_Map_Kb1.Disable();
+        _playerActions.Player_Map.Disable();
     }
 
     public void TakeDamage()
@@ -71,6 +79,7 @@ public class PlayerController : MonoBehaviour
             live3.SetActive(true);
             live2.SetActive(true);
             live1.SetActive(true);
+            DyingAudio();
         }
     }
 
@@ -83,13 +92,25 @@ public class PlayerController : MonoBehaviour
     {
         if (player1)
         {
-            //playerRB.velocity = new Vector2(Input.GetAxisRaw("HorizontalP1"), Input.GetAxisRaw("VerticalP1")) * movementSpeed;
+            if (_playerActions.Player_Map_Kb.Movement.inProgress)
+            {
+                if (!walkingSound.isPlaying)
+                {
+                    WalkingAudio();
+                }
+            }
             _moveInput = _playerActions.Player_Map_Kb.Movement.ReadValue<Vector2>();
             playerRB.velocity = _moveInput * movementSpeed;
         }
         else if (player2)
         {
-            //playerRB.velocity = new Vector2(Input.GetAxisRaw("HorizontalP2"), Input.GetAxisRaw("VerticalP2")) * movementSpeed;
+            if (_playerActions.Player_Map.Movement.inProgress)
+            {
+                if (!walkingSound.isPlaying)
+                {
+                    WalkingAudio();
+                }
+            }
             _moveInput = _playerActions.Player_Map.Movement.ReadValue<Vector2>();
             playerRB.velocity = _moveInput * movementSpeed;
         }
@@ -105,6 +126,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("F pressed");
                 Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
+                ShootAudio();
             }
         }
         else if (player2)
@@ -113,7 +135,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Space pressed");
                 Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
-
+                ShootAudio();
             }
         }
     }
@@ -123,7 +145,12 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("Treffer");
-            TakeDamage();
+            if (lives)
+            {
+                TakeDamage();
+                HitAudio(); 
+            }
+            
         }
         if (other.gameObject.CompareTag("Border"))
         {
@@ -145,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
     private void updateWinningCondition()
     {
-        if (live <= 1 && live >= 3)
+        if (live < 1 || live > 3)
         {
             lives = false;
         }
@@ -159,6 +186,30 @@ public class PlayerController : MonoBehaviour
         }
         collidingObject.SetActive(false);
 
+    }
+
+    public void HitAudio()
+    {
+        hitSound.Play();
+    }
+    
+    public void ShootAudio()
+    {
+        shootSound.Play();
+    }
+    
+    public void DyingAudio()
+    {
+        dyingSound.Play();
+    }
+    public void PowerUpAudio()
+    {
+        powerUpSound.Play();
+    }
+
+    public void WalkingAudio()
+    {
+        walkingSound.Play();
     }
 
 }
