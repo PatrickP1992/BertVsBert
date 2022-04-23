@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UIElements;
@@ -23,5 +24,10 @@ public class Projektile : MonoBehaviour
     private void Shoot()
     {
         bulletRB.velocity = new Vector2(shootingSpeed, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Destroy(gameObject);
     }
 }
