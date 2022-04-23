@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DarknessItem : MonoBehaviour
 {
+    public GameObject blackScreenLeft;
+    public GameObject blackScreenRight;
     // Start is called before the first frame update
     void Start()
     {
