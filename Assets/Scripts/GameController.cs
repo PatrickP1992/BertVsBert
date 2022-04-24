@@ -42,5 +42,17 @@ public class GameController : MonoBehaviour
                 gameState = GameState.GameOver;
             }
         }
+
+        if (gameState == GameState.GameOver)
+        {
+            ResetGame();
+        }
+    }
+
+    private void ResetGame()
+    {
+        player1.ResetPlayer();
+        player2.ResetPlayer();
+        gameState = GameState.Running;
     }
 }

@@ -224,4 +224,16 @@ public class PlayerController : MonoBehaviour
             return true;
         }
     }
+
+    public void ResetPlayer()
+    {
+        ResetPosition();
+        live = 3;
+        lives = true;
+        
+        live3.SetActive(false);
+        live2.SetActive(false);
+        live1.SetActive(false);
+        
+    }
 }
