@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,7 +34,8 @@ public class PlayerController : MonoBehaviour
     private bool lives = true;
     private PlayerActions _playerActions;
     private Vector2 _moveInput;
-
+    private GameObject[] _lifeCoins;
+    private bool _lifeBool;
 
     // Update is called once per frame
     void Update()
@@ -40,11 +43,24 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
         ShootProjektile();
         updateWinningCondition();
+        StartCoroutine(waitTime2(5));
     }
 
     private void Awake()
     {
         _playerActions = new PlayerActions();
+        _lifeCoins = new GameObject[5];
+        _lifeCoins[0] = lifeCoin1;
+        _lifeCoins[1] = lifeCoin2;
+        _lifeCoins[2] = lifeCoin3;
+        _lifeCoins[3] = lifeCoin4;
+        _lifeCoins[4] = lifeCoin5;
+        
+
+        foreach (var coin in _lifeCoins)
+        {
+            coin.SetActive(false);
+        }
     }
 
     private void OnEnable()
@@ -181,6 +197,20 @@ public class PlayerController : MonoBehaviour
     {
         if (live >= 0 && live < 3)
         {
+           
+            if (live == 2)
+            {
+                live3.SetActive(false);
+                live2.SetActive(false);
+                live1.SetActive(false);
+            }
+            else if (live == 1)
+            {
+                
+                live2.SetActive(false);
+                live1.SetActive(false);
+            }
+
             live++;
         }
 
@@ -233,6 +263,32 @@ public class PlayerController : MonoBehaviour
         live3.SetActive(false);
         live2.SetActive(false);
         live1.SetActive(false);
+        
+    }
+
+    private void ActivateLives()
+    {
+        int randNum = Random.Range(0, 5);
+
+        if (_lifeBool == false)
+        {
+            _lifeCoins[randNum].SetActive(true);
+            _lifeBool = true;
+            StartCoroutine( waitTime(5, randNum));
+        }
+    }
+    
+    IEnumerator waitTime(int sec, int pos)
+    {
+        yield return new WaitForSeconds(sec);
+        _lifeCoins[pos].SetActive(false);
+        _lifeBool = false;
+    }
+    
+    IEnumerator waitTime2(int sec)
+    {
+        ActivateLives();
+        yield return new WaitForSeconds(sec);
         
     }
 }
