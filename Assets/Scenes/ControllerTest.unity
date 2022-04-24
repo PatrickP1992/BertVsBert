@@ -2987,6 +2987,8 @@ MonoBehaviour:
   col: {fileID: 1333675490}
   spriteRen: {fileID: 1333675492}
   rBody: {fileID: 1333675489}
+  player1: {fileID: 1399293182}
+  player2: {fileID: 1090998008}
   powerUpSound: {fileID: 1333675494}
   speedLimit: 15
 --- !u!212 &1333675492
