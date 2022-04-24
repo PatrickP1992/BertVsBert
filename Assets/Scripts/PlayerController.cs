@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             live3.SetActive(true);
             live2.SetActive(true);
         }
-        else if (live <= 0)
+        else if (live == 0)
         {
             live3.SetActive(true);
             live2.SetActive(true);
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         {
             if (_playerActions.Player_Map_Kb.Shoot.triggered)
             {
-                Debug.Log("F pressed");
+                //Debug.Log("F pressed");
                 Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
                 ShootAudio();
             }
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             if (_playerActions.Player_Map.Shoot.triggered || _playerActions.Player_Map_Kb1.Shoot.triggered)
             {
-                Debug.Log("Space pressed");
+                //Debug.Log("Space pressed");
                 Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
                 ShootAudio();
             }
