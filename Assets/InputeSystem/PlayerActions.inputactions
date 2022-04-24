@@ -156,7 +156,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Item1",
+                    "name": "Reset",
                     "type": "Button",
                     "id": "21b8df44-da0c-4197-b02f-486e8b9aec4a",
                     "expectedControlType": "Button",
@@ -244,11 +244,11 @@
                 {
                     "name": "",
                     "id": "dd1e5081-0991-4514-8e7a-ce3aa7f51398",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Item1",
+                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

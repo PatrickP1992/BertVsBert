@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource shootSound;
     public AudioSource dyingSound;
 
-
+    public GameController game;
+    
     private int live = 3;
     private bool lives = true;
     private PlayerActions _playerActions;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
         ShootProjektile();
         updateWinningCondition();
+        ResetGame();
         StartCoroutine(waitTime2(5));
     }
 
@@ -153,6 +155,14 @@ public class PlayerController : MonoBehaviour
                 Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
                 ShootAudio();
             }
+        }
+    }
+
+    private void ResetGame()
+    {
+        if (_playerActions.Player_Map_Kb.Reset.triggered)
+        {
+            game.RestartGame();
         }
     }
 

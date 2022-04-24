@@ -178,7 +178,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Item1"",
+                    ""name"": ""Reset"",
                     ""type"": ""Button"",
                     ""id"": ""21b8df44-da0c-4197-b02f-486e8b9aec4a"",
                     ""expectedControlType"": ""Button"",
@@ -266,11 +266,11 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dd1e5081-0991-4514-8e7a-ce3aa7f51398"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Item1"",
+                    ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -432,7 +432,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Player_Map_Kb = asset.FindActionMap("Player_Map_Kb", throwIfNotFound: true);
         m_Player_Map_Kb_Movement = m_Player_Map_Kb.FindAction("Movement", throwIfNotFound: true);
         m_Player_Map_Kb_Shoot = m_Player_Map_Kb.FindAction("Shoot", throwIfNotFound: true);
-        m_Player_Map_Kb_Item1 = m_Player_Map_Kb.FindAction("Item1", throwIfNotFound: true);
+        m_Player_Map_Kb_Reset = m_Player_Map_Kb.FindAction("Reset", throwIfNotFound: true);
         m_Player_Map_Kb_Item2 = m_Player_Map_Kb.FindAction("Item2", throwIfNotFound: true);
         // Player_Map_Kb1
         m_Player_Map_Kb1 = asset.FindActionMap("Player_Map_Kb1", throwIfNotFound: true);
@@ -558,7 +558,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private IPlayer_Map_KbActions m_Player_Map_KbActionsCallbackInterface;
     private readonly InputAction m_Player_Map_Kb_Movement;
     private readonly InputAction m_Player_Map_Kb_Shoot;
-    private readonly InputAction m_Player_Map_Kb_Item1;
+    private readonly InputAction m_Player_Map_Kb_Reset;
     private readonly InputAction m_Player_Map_Kb_Item2;
     public struct Player_Map_KbActions
     {
@@ -566,7 +566,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public Player_Map_KbActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Map_Kb_Movement;
         public InputAction @Shoot => m_Wrapper.m_Player_Map_Kb_Shoot;
-        public InputAction @Item1 => m_Wrapper.m_Player_Map_Kb_Item1;
+        public InputAction @Reset => m_Wrapper.m_Player_Map_Kb_Reset;
         public InputAction @Item2 => m_Wrapper.m_Player_Map_Kb_Item2;
         public InputActionMap Get() { return m_Wrapper.m_Player_Map_Kb; }
         public void Enable() { Get().Enable(); }
@@ -583,9 +583,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnShoot;
-                @Item1.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem1;
-                @Item1.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem1;
-                @Item1.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem1;
+                @Reset.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnReset;
+                @Reset.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnReset;
+                @Reset.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnReset;
                 @Item2.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
                 @Item2.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
                 @Item2.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
@@ -599,9 +599,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
-                @Item1.started += instance.OnItem1;
-                @Item1.performed += instance.OnItem1;
-                @Item1.canceled += instance.OnItem1;
+                @Reset.started += instance.OnReset;
+                @Reset.performed += instance.OnReset;
+                @Reset.canceled += instance.OnReset;
                 @Item2.started += instance.OnItem2;
                 @Item2.performed += instance.OnItem2;
                 @Item2.canceled += instance.OnItem2;
@@ -677,7 +677,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
-        void OnItem1(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
         void OnItem2(InputAction.CallbackContext context);
     }
     public interface IPlayer_Map_Kb1Actions
