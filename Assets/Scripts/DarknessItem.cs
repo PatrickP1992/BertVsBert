@@ -11,7 +11,8 @@ public class DarknessItem : MonoBehaviour
     public BoxCollider2D col;
     public SpriteRenderer spriteRen;
     public Rigidbody2D rBody;
-
+    public PlayerController player1;
+    public PlayerController player2;
     public AudioSource powerUpSound;
 
     public float speedLimit;
@@ -43,6 +44,7 @@ public class DarknessItem : MonoBehaviour
             spriteRen.enabled = false;
             col.enabled = false;
             StartCoroutine(waitTime2(5));
+            player1.ResetPosition();
         }
         else if (other.tag.Equals("Player2"))
         {
@@ -52,6 +54,7 @@ public class DarknessItem : MonoBehaviour
             spriteRen.enabled = false;
             col.enabled = false;
             StartCoroutine(waitTime2(5));
+            player2.ResetPosition();
         }
     }
 

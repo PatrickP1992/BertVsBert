@@ -114,7 +114,6 @@ public class PlayerController : MonoBehaviour
             
             _moveInput = _playerActions.Player_Map.Movement.ReadValue<Vector2>();
             _moveInput += _playerActions.Player_Map_Kb1.Movement.ReadValue<Vector2>();
-            
             playerRB.velocity = _moveInput * movementSpeed;
         }
     }
