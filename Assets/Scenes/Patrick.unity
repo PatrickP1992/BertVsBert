@@ -1439,6 +1439,53 @@ Transform:
   m_Father: {fileID: 2109360485}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &878245115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878245117}
+  - component: {fileID: 878245116}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878245116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878245115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab9fa7602b38964ea6e12c0ef6cf3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1759821593}
+  player2: {fileID: 2003376061}
+  gameState: 0
+--- !u!4 &878245117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878245115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.54236305, y: -0.020868212, z: 0.026109196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009769182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2190,7 @@ MonoBehaviour:
   col: {fileID: 1443681353}
   spriteRen: {fileID: 1443681351}
   rBody: {fileID: 1443681354}
+  powerUpSound: {fileID: 0}
   speedLimit: 15
 --- !u!212 &1443681351
 SpriteRenderer:
@@ -2975,6 +3023,11 @@ MonoBehaviour:
   lifeCoin3: {fileID: 0}
   lifeCoin4: {fileID: 0}
   lifeCoin5: {fileID: 0}
+  walkingSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  powerUpSound: {fileID: 0}
+  shootSound: {fileID: 0}
+  dyingSound: {fileID: 0}
 --- !u!1 &1819300319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,6 +3639,11 @@ MonoBehaviour:
   lifeCoin3: {fileID: 0}
   lifeCoin4: {fileID: 0}
   lifeCoin5: {fileID: 0}
+  walkingSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  powerUpSound: {fileID: 0}
+  shootSound: {fileID: 0}
+  dyingSound: {fileID: 0}
 --- !u!1 &2054642498
 GameObject:
   m_ObjectHideFlags: 0
