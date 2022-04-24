@@ -212,4 +212,16 @@ public class PlayerController : MonoBehaviour
     {
         walkingSound.Play();
     }
+
+    public bool GetDeath()
+    {
+        if (lives)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
