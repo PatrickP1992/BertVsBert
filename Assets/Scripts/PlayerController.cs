@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
@@ -163,6 +164,15 @@ public class PlayerController : MonoBehaviour
         if (_playerActions.Player_Map_Kb.Reset.triggered)
         {
             game.RestartGame();
+        }
+    }
+    
+    private void BackToMenu()
+    {
+        if (_playerActions.Player_Map_Kb.Esc.triggered)
+        {
+            Debug.Log("Esc pressed");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

@@ -187,7 +187,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Item2"",
+                    ""name"": ""Esc"",
                     ""type"": ""Button"",
                     ""id"": ""f7969cf6-ae1f-4302-bf89-fe804a41b43d"",
                     ""expectedControlType"": ""Button"",
@@ -277,11 +277,11 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""eb7ad3d1-48dc-44ce-b78f-f214248c9f5a"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Item2"",
+                    ""action"": ""Esc"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -433,7 +433,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Player_Map_Kb_Movement = m_Player_Map_Kb.FindAction("Movement", throwIfNotFound: true);
         m_Player_Map_Kb_Shoot = m_Player_Map_Kb.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Map_Kb_Reset = m_Player_Map_Kb.FindAction("Reset", throwIfNotFound: true);
-        m_Player_Map_Kb_Item2 = m_Player_Map_Kb.FindAction("Item2", throwIfNotFound: true);
+        m_Player_Map_Kb_Esc = m_Player_Map_Kb.FindAction("Esc", throwIfNotFound: true);
         // Player_Map_Kb1
         m_Player_Map_Kb1 = asset.FindActionMap("Player_Map_Kb1", throwIfNotFound: true);
         m_Player_Map_Kb1_Movement = m_Player_Map_Kb1.FindAction("Movement", throwIfNotFound: true);
@@ -559,7 +559,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Map_Kb_Movement;
     private readonly InputAction m_Player_Map_Kb_Shoot;
     private readonly InputAction m_Player_Map_Kb_Reset;
-    private readonly InputAction m_Player_Map_Kb_Item2;
+    private readonly InputAction m_Player_Map_Kb_Esc;
     public struct Player_Map_KbActions
     {
         private @PlayerActions m_Wrapper;
@@ -567,7 +567,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Map_Kb_Movement;
         public InputAction @Shoot => m_Wrapper.m_Player_Map_Kb_Shoot;
         public InputAction @Reset => m_Wrapper.m_Player_Map_Kb_Reset;
-        public InputAction @Item2 => m_Wrapper.m_Player_Map_Kb_Item2;
+        public InputAction @Esc => m_Wrapper.m_Player_Map_Kb_Esc;
         public InputActionMap Get() { return m_Wrapper.m_Player_Map_Kb; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -586,9 +586,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Reset.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnReset;
-                @Item2.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
-                @Item2.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
-                @Item2.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnItem2;
+                @Esc.started -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnEsc;
+                @Esc.performed -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnEsc;
+                @Esc.canceled -= m_Wrapper.m_Player_Map_KbActionsCallbackInterface.OnEsc;
             }
             m_Wrapper.m_Player_Map_KbActionsCallbackInterface = instance;
             if (instance != null)
@@ -602,9 +602,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
-                @Item2.started += instance.OnItem2;
-                @Item2.performed += instance.OnItem2;
-                @Item2.canceled += instance.OnItem2;
+                @Esc.started += instance.OnEsc;
+                @Esc.performed += instance.OnEsc;
+                @Esc.canceled += instance.OnEsc;
             }
         }
     }
@@ -678,7 +678,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
-        void OnItem2(InputAction.CallbackContext context);
+        void OnEsc(InputAction.CallbackContext context);
     }
     public interface IPlayer_Map_Kb1Actions
     {

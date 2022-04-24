@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public Button resetButton;
     private int _scoreP1 = 0;
     private int _scoreP2 = 0;
+    public DarknessItem darknessItem;
 
     public enum GameState 
     {
@@ -97,6 +98,7 @@ public class GameController : MonoBehaviour
         player1.ResetPlayer();
         player2.ResetPlayer();
         gameState = GameState.Running;
+        darknessItem.ResetPostion();
     }
 
     public void RestartGame()
@@ -114,4 +116,6 @@ public class GameController : MonoBehaviour
             gameState = GameState.Running;
         }
     }
+
+    
 }

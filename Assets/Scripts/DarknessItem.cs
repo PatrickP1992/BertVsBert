@@ -14,6 +14,11 @@ public class DarknessItem : MonoBehaviour
     public PlayerController player1;
     public PlayerController player2;
     public AudioSource powerUpSound;
+    public Transform respawnPoint;
+    public Transform boundUp;
+    public Transform boundBottom;
+    public Transform boundRight;
+    public Transform boundLeft;
 
     public float speedLimit;
     // Start is called before the first frame update
@@ -25,7 +30,7 @@ public class DarknessItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckBounds();
     }
 
     public void PowerUpAudio()
@@ -73,5 +78,33 @@ public class DarknessItem : MonoBehaviour
         col.enabled = true;
     }
 
+    public void ResetPostion()
+    {
+        gameObject.transform.position = respawnPoint.transform.position;
+        rBody.velocity = new Vector2();
+    }
+    
+    private void CheckBounds()
+    {
+        if (gameObject.transform.position.x > boundRight.transform.position.x)
+        {
+            ResetPostion();
+        }
+        
+        if (gameObject.transform.position.x < boundLeft.transform.position.x)
+        {
+            ResetPostion();
+        }
+        
+        if (gameObject.transform.position.y > boundUp.transform.position.y)
+        {
+            ResetPostion();
+        }
+        
+        if (gameObject.transform.position.y < boundBottom.transform.position.y)
+        {
+            ResetPostion();
+        }
+    }
     
 }
