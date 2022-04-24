@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour
         if (live == 2)
         {
             live3.SetActive(true);
-
         }
         else if (live == 1)
         {
@@ -99,6 +98,7 @@ public class PlayerController : MonoBehaviour
                     WalkingAudio();
                 }
             }
+
             _moveInput = _playerActions.Player_Map_Kb.Movement.ReadValue<Vector2>();
             playerRB.velocity = _moveInput * movementSpeed;
         }
@@ -111,11 +111,12 @@ public class PlayerController : MonoBehaviour
                     WalkingAudio();
                 }
             }
+            
             _moveInput = _playerActions.Player_Map.Movement.ReadValue<Vector2>();
+            _moveInput += _playerActions.Player_Map_Kb1.Movement.ReadValue<Vector2>();
+            
             playerRB.velocity = _moveInput * movementSpeed;
         }
-
-
     }
 
     private void ShootProjektile()
@@ -131,7 +132,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (player2)
         {
-            if (_playerActions.Player_Map.Shoot.triggered)
+            if (_playerActions.Player_Map.Shoot.triggered || _playerActions.Player_Map_Kb1.Shoot.triggered)
             {
                 Debug.Log("Space pressed");
                 Instantiate(projektilePrefab, firePoint.position, firePoint.rotation);
@@ -148,16 +149,15 @@ public class PlayerController : MonoBehaviour
             if (lives)
             {
                 TakeDamage();
-                HitAudio(); 
+                HitAudio();
             }
-            
         }
+
         if (other.gameObject.CompareTag("Border"))
         {
             Debug.Log("Gift");
             TakeDamage();
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -184,24 +184,25 @@ public class PlayerController : MonoBehaviour
         {
             live++;
         }
-        collidingObject.SetActive(false);
 
+        collidingObject.SetActive(false);
     }
 
     public void HitAudio()
     {
         hitSound.Play();
     }
-    
+
     public void ShootAudio()
     {
         shootSound.Play();
     }
-    
+
     public void DyingAudio()
     {
         dyingSound.Play();
     }
+
     public void PowerUpAudio()
     {
         powerUpSound.Play();
@@ -211,5 +212,4 @@ public class PlayerController : MonoBehaviour
     {
         walkingSound.Play();
     }
-
 }
