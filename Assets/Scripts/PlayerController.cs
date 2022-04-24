@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         updateWinningCondition();
         ResetGame();
         StartCoroutine(waitTime2(5));
+        BackToMenu();
     }
 
     private void Awake()
